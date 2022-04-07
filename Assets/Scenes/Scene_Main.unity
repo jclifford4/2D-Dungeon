@@ -870,6 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4536e48cae9f1245a432acca126a6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &2017101383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActiveSceneName: 
   ActiveSceneNum: 0
+  canQuit: 0
 --- !u!1 &2022325224
 GameObject:
   m_ObjectHideFlags: 0

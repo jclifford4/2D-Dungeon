@@ -33,6 +33,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        
+    }
+
     public int getActiveSceneNum()
     {
         return SceneManager.GetActiveScene().buildIndex;
@@ -44,6 +49,15 @@ public class UIManager : MonoBehaviour
     }
 
     public bool canPressQuitButton { get; set; }
+
+    public void goToSceneX(int x)
+    {
+        SceneManager.LoadScene(x);
+        //ActiveSceneName = UIManager.Instance.getActiveSceneName();
+        //ActiveSceneNum = UIManager.Instance.getActiveSceneNum();
+    }
+
+
 
 
 }

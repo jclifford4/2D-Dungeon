@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
+    public int score = 0;
 
     public static GameManager Instance
     {
@@ -12,8 +13,10 @@ public class GameManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                GameObject go = new GameObject("GameManager");
-                go.AddComponent<GameManager>();
+                
+                Debug.Log("GameManager is Null");
+                /*GameObject go = new GameObject("GameManager");
+                go.AddComponent<GameManager>();*/
             }
 
             return _instance;
@@ -22,10 +25,27 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        _instance = this;
-        Debug.Log("_instance: " + _instance);
         DontDestroyOnLoad(this);
+        if (_instance == null)
+        {
+            _instance = this;
+            Debug.Log("GameManager _instance: " + _instance);
+        }
+        else
+        {
+            Object.Destroy(gameObject);
+        }
     }
+
+    private void Update()
+    {
+        ScoreManager.updateScore();
+        
+    }
+
+
+
+
 
 
 
