@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-    public int score = 0;
+    public int deaths, score = 0;
 
     public static GameManager Instance
     {
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         ScoreManager.updateScore();
+        DeathManager.updateDeaths();
         
     }
 
