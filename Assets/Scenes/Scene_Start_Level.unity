@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 607800002}
   m_Layer: 0
   m_Name: Player_Obj
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +374,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.025080442, y: 0.77416456}
+  m_Offset: {x: -0.025080442, y: 0.7097137}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -385,7 +385,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.62702227, y: 1.3850691}
+  m_Size: {x: 0.62702227, y: 1.5139709}
   m_EdgeRadius: 0
 --- !u!212 &607799999
 SpriteRenderer:
@@ -485,9 +485,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99ddf8d0ccc4714293b32c048b232ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 607800000}
   currentSpeed: 6
   isSprinting: 0
   isGrounded: 0
+  isFacingRight: 1
+  sr: {fileID: 607799999}
 --- !u!1 &779416811
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +654,7 @@ GameObject:
   - component: {fileID: 1362175075}
   - component: {fileID: 1362175074}
   - component: {fileID: 1362175073}
+  - component: {fileID: 1362175076}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -723,6 +727,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1362175076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362175072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44d68729b1a13e43843629a0155a8dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTransform: {fileID: 607800000}
 --- !u!1 &1710008840
 GameObject:
   m_ObjectHideFlags: 0
