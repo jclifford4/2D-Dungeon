@@ -14,10 +14,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private const float jumpPower = 6f;
     [SerializeField] private float currentSpeed = walkSpeed;
     [SerializeField] private bool isSprinting = false;
+    [SerializeField] private bool isWalking = false;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isFacingRight;
+
+    [SerializeField] private bool isIdle;
     private Rigidbody2D body;
     [SerializeField] SpriteRenderer sr;
+
+    public Animator animator;
     
     
 
@@ -25,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         // rigid body of player
-        body = GameObject.Find("Player_Obj").GetComponent<Rigidbody2D>();
+        body = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         
     }
 
@@ -62,31 +67,48 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * currentSpeed, body.velocity.y);
 
         checkSprint();
+        checkIdle();
         checkJump();
 
-        
+    }
 
+    private void checkIdle()
+    {
+        if (!Input.anyKey){
+            
+            
+            animator.SetTrigger("Idle");
+            animator.SetInteger("Speed", 0);
+            
+        }
+        else{
 
-        
-
-        
-
-
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)){
+                animator.ResetTrigger("Idle");
+                animator.SetInteger("Speed", (int) walkSpeed);
+            }
+        }
     }
 
     private void checkSprint(){
         if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
         {
             isSprinting = true;
-
+            isWalking = false;
+            animator.SetTrigger("Idle");
+            animator.SetBool("isSprinting", isSprinting);
             currentSpeed = sprintSpeed;
+            animator.SetInteger("Speed", (int) currentSpeed);
             body.velocity = new Vector2(currentSpeed, body.velocity.y);
 
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             isSprinting = false;
+            isWalking = true;
+            animator.SetBool("isSprinting", isSprinting);
             currentSpeed = walkSpeed;
+            animator.SetInteger("Speed", (int) currentSpeed);
             body.velocity = new Vector2(currentSpeed, body.velocity.y);
 
         }
@@ -97,8 +119,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
+            animator.SetInteger("Speed", 0);
+            animator.ResetTrigger("Jmping");
+            
+        }else{
+            animator.SetTrigger("Jumping");
         }
-
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -106,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Terrain"))
         {
             isGrounded = true;
+            animator.SetBool("isGrounded", isGrounded);
         }
     }
 
@@ -114,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Terrain")) 
         {
             isGrounded = false;
+            animator.SetBool("isGrounded", isGrounded);
         }
     }
 }
