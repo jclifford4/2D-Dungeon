@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (UIManager.Instance.getActiveSceneNum() == 1 && GameManager.Instance.score < 9913)
         {
-            GameManager.Instance.score++;
+            //GameManager.Instance.score++;
 
             
 
@@ -46,7 +46,7 @@ public class ScoreManager : MonoBehaviour
                     (GameManager.Instance.score == 9913))
         {
 
-            UIManager.Instance.goToSceneX(0);
+            //UIManager.Instance.goToSceneX(0);
 
 
         }
