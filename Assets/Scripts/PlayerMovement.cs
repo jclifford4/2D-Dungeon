@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private const float walkSpeed = 5f;
     [SerializeField] private const float sprintSpeed = 8f;
+    [SerializeField] private const float jumpPower = 6f;
     [SerializeField] private float currentSpeed = walkSpeed;
     [SerializeField] private bool isSprinting = false;
     [SerializeField] private bool isGrounded;
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            body.velocity = new Vector2(body.velocity.x, walkSpeed);
+            body.velocity = new Vector2(body.velocity.x, jumpPower);
         }
 
 
