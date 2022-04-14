@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             animator.SetInteger("Speed", 0);
-            animator.ResetTrigger("Jumping");
+            
             
         }else{
             
