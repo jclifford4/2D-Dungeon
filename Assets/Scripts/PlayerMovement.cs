@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     
     // Start is called before the first frame update
     public Transform player;
-    [SerializeField] private const float walkSpeed = 5f;
+    [SerializeField] private const float walkSpeed = 6f;
     [SerializeField] private const float sprintSpeed = 8f;
     [SerializeField] private const float jumpPower = 6f;
     [SerializeField] private float currentSpeed = walkSpeed;
