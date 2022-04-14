@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
             isWalking = false;
             animator.SetTrigger("Idle");
             animator.SetBool("isSprinting", isSprinting);
+            animator.ResetTrigger("Jumping");
             currentSpeed = sprintSpeed;
             animator.SetInteger("Speed", (int) currentSpeed);
             body.velocity = new Vector2(currentSpeed, body.velocity.y);
@@ -116,11 +117,11 @@ public class PlayerMovement : MonoBehaviour
 
 
     private void checkJump(){
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded))
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             animator.SetInteger("Speed", 0);
-            animator.ResetTrigger("Jmping");
+            animator.ResetTrigger("Jumping");
             
         }else{
             animator.SetTrigger("Jumping");
