@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
             isWalking = false;
             animator.SetTrigger("Idle");
             animator.SetBool("isSprinting", isSprinting);
-            animator.ResetTrigger("Jumping");
+            
             currentSpeed = sprintSpeed;
             animator.SetInteger("Speed", (int) currentSpeed);
             body.velocity = new Vector2(currentSpeed, body.velocity.y);
@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            
             isSprinting = false;
             isWalking = true;
             animator.SetBool("isSprinting", isSprinting);
@@ -124,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
             animator.ResetTrigger("Jumping");
             
         }else{
-            animator.SetTrigger("Jumping");
+            
         }
         
     }
