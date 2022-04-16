@@ -124,11 +124,14 @@ public class PlayerMovement : MonoBehaviour
             animator.SetInteger("Speed", 0);
             
             
-        }else{
-            
         }
+            
+        
         
     }
+
+
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
