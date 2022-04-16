@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     [SerializeField] private int deaths, score;
     
+    
 
     public static GameManager Instance
     {
@@ -41,22 +42,23 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if (UIManager.Instance.getActiveSceneNum() > 0){
-            updateScore();
-        }
+        
         updateScore();
-        DeathManager.updateDeaths();
+        //DeathManager.updateDeaths();
         
     }
 
 
     private void updateScore(){
 
-        if (UIManager.Instance.getActiveSceneNum() > 0){
+        if (UIManager.Instance.getActiveSceneNum() == 1){
             score = PlayerManager.Instance.score;
         }
         
     }
+
+
+    
 
 
     
