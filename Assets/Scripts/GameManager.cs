@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-    public int deaths, score = 0;
+    [SerializeField] private int deaths, score;
+    
 
     public static GameManager Instance
     {
@@ -39,10 +40,26 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        ScoreManager.updateScore();
+
+        if (UIManager.Instance.getActiveSceneNum() > 0){
+            updateScore();
+        }
+        updateScore();
         DeathManager.updateDeaths();
         
     }
+
+
+    private void updateScore(){
+
+        if (UIManager.Instance.getActiveSceneNum() > 0){
+            score = PlayerManager.Instance.score;
+        }
+        
+    }
+
+
+    
 
 
 

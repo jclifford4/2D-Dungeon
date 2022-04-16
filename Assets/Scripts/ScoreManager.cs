@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
         if (UIManager.Instance.getActiveSceneNum() == 1)
         {
 
-            txt_pts.text = GameManager.Instance.score.ToString();
+            //txt_pts.text = GameManager.Instance.score.ToString();
 
             
 
@@ -33,22 +33,22 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    internal static void updateScore()
-    {
-        if (UIManager.Instance.getActiveSceneNum() == 1 && GameManager.Instance.score < 9913)
-        {
-            //GameManager.Instance.score++;
+    // internal static void updateScore()
+    // {
+    //     if (UIManager.Instance.getActiveSceneNum() == 1 && GameManager.Instance.score < 9913)
+    //     {
+    //         //GameManager.Instance.score++;
 
             
 
-        }
-        else if (UIManager.Instance.getActiveSceneNum() == 1 && 
-                    (GameManager.Instance.score == 9913))
-        {
+    //     }
+    //     else if (UIManager.Instance.getActiveSceneNum() == 1 && 
+    //                 (GameManager.Instance.score == 9913))
+    //     {
 
-            //UIManager.Instance.goToSceneX(0);
+    //         //UIManager.Instance.goToSceneX(0);
 
 
-        }
-    }
+    //     }
+    // }
 }

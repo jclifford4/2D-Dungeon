@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private static PlayerManager _instance;
-    
+    [SerializeField] public int score;
 
     public static PlayerManager Instance
     {

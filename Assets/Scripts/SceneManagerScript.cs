@@ -14,7 +14,6 @@ public class SceneManagerScript : MonoBehaviour
     public bool canQuit;
     private Button b_quit, b_play, b_about;
     public static TMP_Text t_pts;
-
     // Start is called before the first frame update
     private void Start()
     {

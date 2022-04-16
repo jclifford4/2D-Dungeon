@@ -25,7 +25,7 @@ public class DeathManager : MonoBehaviour
         if (UIManager.Instance.getActiveSceneNum() == 1)
         {
 
-            txt_death_pts.text = GameManager.Instance.deaths.ToString();
+            //txt_death_pts.text = GameManager.Instance.deaths.ToString();
 
 
 
@@ -38,7 +38,7 @@ public class DeathManager : MonoBehaviour
     {
        if (UIManager.Instance.getActiveSceneNum() == 1 && Input.GetKeyDown(KeyCode.X))
         {
-            GameManager.Instance.deaths++;
+            //GameManager.Instance.deaths++;
         }
     }
 }
