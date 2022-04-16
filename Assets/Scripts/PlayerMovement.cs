@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isWalking = false;
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isFacingRight;
+    [SerializeField] private int velocityX;
 
     [SerializeField] private bool isIdle;
     private Rigidbody2D body;
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         if (body.velocity.x < 0)
         {
             gameObject.transform.localRotation = Quaternion.Euler(0,180,0);
+            
             // gameObject.transform.localScale = new Vector3(-1,1,1);
             isFacingRight = false;
             
@@ -57,14 +59,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpdateSpriteFlip();
+        //UpdateSpriteFlip();
       
     }
 
     private void Update()
     {
 
+        
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * currentSpeed, body.velocity.y);
+        UpdateSpriteFlip();
 
         checkSprint();
         checkIdle();
