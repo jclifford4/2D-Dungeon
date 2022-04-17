@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
+    public int playerScore;
 
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.CompareTag("Diamond")){
-            PlayerManager.Instance.score++;
+            PlayerManager.Instance.addToScore(1);
+            
             //Debug.Log("Score: " + PlayerManager.Instance.score);
             Destroy(collision.gameObject);
             
