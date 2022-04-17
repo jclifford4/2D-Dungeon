@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
         if (UIManager.Instance.getActiveSceneNum() == 3)
         {
 
-            txt_pts.text = PlayerManager.Instance.score.ToString();
+            txt_pts.text = PlayerManager.Instance.getScore().ToString();
 
             
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private static PlayerManager _instance;
-    [SerializeField] public int score;
+    [SerializeField] private int score;
+    [SerializeField] private string color, name;
 
     public static PlayerManager Instance
     {
@@ -35,6 +36,23 @@ public class PlayerManager : MonoBehaviour
         {
             Object.Destroy(gameObject);
         }
+    }
+
+
+    public int getScore()
+    {
+        return score;
+    }
+
+    private void setScore(int score)
+    {
+        this.score = score;
+       
+    }
+
+    public void addToScore(int val)
+    {
+        setScore(getScore() + val);
     }
 }
 

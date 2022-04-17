@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
 
         if ((UIManager.Instance.getActiveSceneNum() > 2) && (UIManager.Instance.getActiveSceneNum() < 5))
         {
-            score = PlayerManager.Instance.score;
+            score = PlayerManager.Instance.getScore();
         }
         
     }
