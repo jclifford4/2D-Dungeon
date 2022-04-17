@@ -19,7 +19,7 @@ public class ItemCollector : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.CompareTag("Diamond")){
             PlayerManager.Instance.score++;
-            Debug.Log("Score: " + PlayerManager.Instance.score);
+            //Debug.Log("Score: " + PlayerManager.Instance.score);
             Destroy(collision.gameObject);
             
         }

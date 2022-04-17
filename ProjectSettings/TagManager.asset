@@ -8,6 +8,7 @@ TagManager:
   - Diamond
   - PadLimited
   - PadCloud
+  - Button
   layers:
   - Default
   - TransparentFX

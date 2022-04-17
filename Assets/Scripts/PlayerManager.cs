@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
             if (_instance == null)
             {
 
-                Debug.Log("PlayerManager is Null");
+                //Debug.Log("PlayerManager is Null");
                 /*GameObject go = new GameObject("GameManager");
                 go.AddComponent<GameManager>();*/
             }

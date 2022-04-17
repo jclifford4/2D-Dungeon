@@ -6,31 +6,57 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance { get; private set; }
+    public static UIManager _instance;
     private string ActiveSceneName;
     private int ActiveSceneNum;
-    
 
-    // Singleton Pattern
+    public static UIManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+
+                Debug.Log("UIManager is Null");
+                /*GameObject go = new GameObject("GameManager");
+                go.AddComponent<GameManager>();*/
+
+                
+            }
+
+            return _instance;
+        }
+    }
+
     private void Awake()
     {
-        if (Instance == null)
+        DontDestroyOnLoad(this);
+        if (_instance == null)
         {
-            Instance = this;
-            DontDestroyOnLoad(this);
-
+            _instance = this;
+            Debug.Log("UIManager _instance: " + _instance);
             ActiveSceneName = getActiveSceneName();
             ActiveSceneNum = getActiveSceneNum();
-
-
-
-            Debug.Log("Scene Instance: " + Instance);
         }
         else
         {
-            Destroy(gameObject);
-
+            UnityEngine.Object.Destroy(gameObject);
         }
+    }
+
+    public void quitGame()
+    {
+#if UNITY_EDITOR
+
+        UnityEditor.EditorApplication.isPlaying = false;
+
+#endif
+       
+
+        Application.Quit();
+
+
+
     }
 
     private void Update()
@@ -55,6 +81,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(x);
         //ActiveSceneName = UIManager.Instance.getActiveSceneName();
         //ActiveSceneNum = UIManager.Instance.getActiveSceneNum();
+    }
+
+
+    public void goToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 

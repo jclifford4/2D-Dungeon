@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UIManager.Instance.getActiveSceneNum() == 1)
+        if (UIManager.Instance.getActiveSceneNum() == 3)
         {
 
             txt_pts.text = PlayerManager.Instance.score.ToString();
@@ -33,22 +33,5 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    // internal static void updateScore()
-    // {
-    //     if (UIManager.Instance.getActiveSceneNum() == 1 && GameManager.Instance.score < 9913)
-    //     {
-    //         //GameManager.Instance.score++;
-
-            
-
-    //     }
-    //     else if (UIManager.Instance.getActiveSceneNum() == 1 && 
-    //                 (GameManager.Instance.score == 9913))
-    //     {
-
-    //         //UIManager.Instance.goToSceneX(0);
-
-
-    //     }
-    // }
+    
 }
