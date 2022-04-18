@@ -9,6 +9,7 @@ TagManager:
   - PadLimited
   - PadCloud
   - Button
+  - ColorDrop
   layers:
   - Default
   - TransparentFX

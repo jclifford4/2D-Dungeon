@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
     [SerializeField] private int deaths, score;
+    [SerializeField] private string difficulty;
     
     
 
