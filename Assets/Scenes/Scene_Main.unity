@@ -1376,7 +1376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2020995869}
   - component: {fileID: 2020995868}
-  - component: {fileID: 2020995870}
+  - component: {fileID: 2020995871}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1410,27 +1410,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2020995870
+--- !u!114 &2020995871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020995867}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e99f5f0acaf36242a85c0b11741999a, type: 3}
+  m_Script: {fileID: 11500000, guid: e633620c1f7177a419decf863432a907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveSceneName: 
-  ActiveSceneNum: 0
-  canQuit: 0
-  b_quit: {fileID: 0}
-  b_play: {fileID: 0}
-  b_about: {fileID: 0}
-  b_create: {fileID: 0}
-  b_back: {fileID: 0}
-  b_credits: {fileID: 0}
 --- !u!1 &2022325224
 GameObject:
   m_ObjectHideFlags: 0
