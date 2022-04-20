@@ -10,8 +10,9 @@ public class CameraFollow : MonoBehaviour
     {
        
     }
-    
-    void FixedUpdate(){
+
+    void FixedUpdate()
+    {
         this.transform.position = new Vector3(followTransform.position.x,
                      followTransform.position.y, this.followTransform.position.z - 1);
     }
