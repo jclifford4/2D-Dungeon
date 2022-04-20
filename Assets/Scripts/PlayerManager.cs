@@ -54,5 +54,17 @@ public class PlayerManager : MonoBehaviour
     {
         setScore(getScore() + val);
     }
+
+
+    public void setName(string name)
+    {
+        this.name = name;
+
+    }
+
+    internal void setColor(string color)
+    {
+        this.color = color;
+    }
 }
 

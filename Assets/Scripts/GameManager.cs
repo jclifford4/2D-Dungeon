@@ -60,10 +60,16 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+    public void setDifficulty(string diff)
+    {
+        this.difficulty = diff;
+    }
 
 
-    
+
+
+
+
 
 
 
