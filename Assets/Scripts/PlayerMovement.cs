@@ -65,31 +65,52 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        
+
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * currentSpeed, body.velocity.y);
 
         
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * currentSpeed, body.velocity.y);
         UpdateSpriteFlip();
 
         checkSprint();
+        
         checkIdle();
         checkJump();
+
+        
+
+        
 
     }
 
     private void checkIdle()
     {
+        
+
         if (!Input.anyKey){
             
             
             animator.SetTrigger("Idle");
             animator.SetInteger("Speed", 0);
+            isIdle = true;
+            isSprinting = false;
+            isWalking = false;
             
+
         }
         else{
+
+            isIdle = false;
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)){
                 animator.ResetTrigger("Idle");
                 animator.SetInteger("Speed", (int) walkSpeed);
+                isWalking = true;
+                isSprinting = false;
+                
+
+
+
             }
         }
     }
@@ -105,6 +126,8 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = sprintSpeed;
             animator.SetInteger("Speed", (int) currentSpeed);
             body.velocity = new Vector2(currentSpeed, body.velocity.y);
+            
+            
 
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -118,6 +141,10 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(currentSpeed, body.velocity.y);
 
         }
+
+        
+
+        
     }
 
 
@@ -126,8 +153,14 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             animator.SetInteger("Speed", 0);
-            
-            
+            FindObjectOfType<AudioManager>().Play("PlayerJump");
+
+
+        }
+        else
+        {
+            //FindObjectOfType<AudioManager>().Stop("PlayerJump");
+
         }
             
         
