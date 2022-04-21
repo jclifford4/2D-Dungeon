@@ -30,26 +30,32 @@ public class ClickHandler : MonoBehaviour
 
         if (a.gameObject.name == "Quit_Button")
         {
+            FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.quitGame();
         }
         else if(a.gameObject.name == "About_Button")
         {
+            FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.goToSceneX(2);
         }
         else if(a.gameObject.name == "Play_Button")
         {
+            FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.goToSceneX(3);
         }
         else if(a.gameObject.name == "Create_Button")
         {
+            FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.goToSceneX(1);
         }
         else if(a.gameObject.name == "Back_Button")
         {
+            FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.goToMainMenu();
         }
         else if (a.gameObject.name == "Credits_Button")
         {
+            FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.goToSceneX(5);
         }
 

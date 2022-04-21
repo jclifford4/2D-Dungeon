@@ -54,17 +54,20 @@ public class CreateCharcterButtonLinker : MonoBehaviour
     {
         if (n_input.text.Length > 0)
         {
+            FindObjectOfType<AudioManager>().Play("SaveClick");
             PlayerManager.Instance.setName(n_input.text.ToString());
         }
     }
 
     private void saveDiff()
     {
+        FindObjectOfType<AudioManager>().Play("SaveClick");
         GameManager.Instance.setDifficulty(d_diff.options[d_diff.value].text);
     }
 
     private void saveColor()
     {
+        FindObjectOfType<AudioManager>().Play("SaveClick");
         PlayerManager.Instance.setColor(d_color.options[d_color.value].text);
     }
 
