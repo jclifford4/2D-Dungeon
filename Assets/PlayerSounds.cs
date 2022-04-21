@@ -47,4 +47,8 @@ public class PlayerSounds : MonoBehaviour
             FindObjectOfType<AudioManager>().Stop("PlayerSteps1");
         }
     }
+
+
+
+    
 }

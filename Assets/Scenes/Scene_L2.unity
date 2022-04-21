@@ -2466,6 +2466,7 @@ GameObject:
   - component: {fileID: 607800002}
   - component: {fileID: 607800003}
   - component: {fileID: 607800005}
+  - component: {fileID: 607800004}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2601,11 +2602,8 @@ MonoBehaviour:
   currentSpeed: 6
   isSprinting: 0
   isWalking: 0
-  isGrounded: 0
   isFacingRight: 1
-  velocityX: 0
   isIdle: 0
-  sr: {fileID: 607799999}
   animator: {fileID: 607800003}
 --- !u!95 &607800003
 Animator:
@@ -2626,6 +2624,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &607800004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607799997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0042451f36625e24e8d86effdb21be0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &607800005
 MonoBehaviour:
   m_ObjectHideFlags: 0
