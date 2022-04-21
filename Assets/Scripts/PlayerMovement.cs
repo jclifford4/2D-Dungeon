@@ -15,13 +15,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float currentSpeed = walkSpeed;
     [SerializeField] private bool isSprinting = false;
     [SerializeField] private bool isWalking = false;
-    [SerializeField] private bool isGrounded;
+    [SerializeField] static bool isGrounded;
     [SerializeField] private bool isFacingRight;
-    [SerializeField] private int velocityX;
+    [SerializeField] static int velocityX, velocityY;
 
     [SerializeField] private bool isIdle;
     private Rigidbody2D body;
-    [SerializeField] SpriteRenderer sr;
+    //[SerializeField] SpriteRenderer sr;
 
     public Animator animator;
     
@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // rigid body of player
         body = GameObject.Find("Player").GetComponent<Rigidbody2D>();
-        
+        FindObjectOfType<AudioManager>().Stop("PlayerSteps1");
+
     }
 
 
@@ -68,8 +69,16 @@ public class PlayerMovement : MonoBehaviour
         
 
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * currentSpeed, body.velocity.y);
+        
+        velocityX = (int)body.velocity.x;
+        velocityY = (int)body.velocity.y;
 
         
+
+        
+
+
+
         UpdateSpriteFlip();
 
         checkSprint();
@@ -77,9 +86,12 @@ public class PlayerMovement : MonoBehaviour
         checkIdle();
         checkJump();
 
-        
 
-        
+       
+
+
+
+
 
     }
 
@@ -89,7 +101,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (!Input.anyKey){
             
-            
+               // if (velocityX == 0) FindObjectOfType<AudioManager>().Stop("PlayerSteps1");
+
             animator.SetTrigger("Idle");
             animator.SetInteger("Speed", 0);
             isIdle = true;
@@ -100,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else{
 
+            
             isIdle = false;
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)){
@@ -112,6 +126,9 @@ public class PlayerMovement : MonoBehaviour
 
 
             }
+
+
+            
         }
     }
 
@@ -153,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             animator.SetInteger("Speed", 0);
-            FindObjectOfType<AudioManager>().Play("PlayerJump");
+            //FindObjectOfType<AudioManager>().Play("PlayerJump");
 
 
         }
@@ -187,5 +204,16 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
             animator.SetBool("isGrounded", isGrounded);
         }
+    }
+
+
+    public static int getYvelocity()
+    {
+        return velocityY;
+    }
+
+    public static bool isTouchingGround()
+    {
+        return isGrounded;
     }
 }

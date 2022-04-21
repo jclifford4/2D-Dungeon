@@ -4666,6 +4666,7 @@ GameObject:
   - component: {fileID: 607800003}
   - component: {fileID: 607800005}
   - component: {fileID: 607800004}
+  - component: {fileID: 607800006}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4805,7 +4806,6 @@ MonoBehaviour:
   isFacingRight: 1
   velocityX: 0
   isIdle: 0
-  sr: {fileID: 607799999}
   animator: {fileID: 607800003}
 --- !u!95 &607800003
 Animator:
@@ -4935,6 +4935,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
+--- !u!114 &607800006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607799997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0042451f36625e24e8d86effdb21be0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &620844459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4918609182945966093, guid: db4a95f86b7c9274a91e7e3c2935b0ca, type: 3}
