@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     [SerializeField] private int deaths, score;
     [SerializeField] private string difficulty;
+    [SerializeField] private float lvlTime;
     
     
 
@@ -43,9 +44,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        
+        updateLvlTimer();
         updateScore();
         //DeathManager.updateDeaths();
+        
         
     }
 
@@ -56,7 +58,20 @@ public class GameManager : MonoBehaviour
         {
             score = PlayerManager.Instance.getScore();
         }
+
+
+
         
+    }
+
+    public void updateLvlTimer()
+    {
+        this.lvlTime = LevelTimer.getLvlTime();
+    }
+
+    public float getLvlTime()
+    {
+        return lvlTime;
     }
 
 
@@ -64,6 +79,13 @@ public class GameManager : MonoBehaviour
     {
         this.difficulty = diff;
     }
+
+    public string getDifficulty()
+    {
+        return difficulty;
+    }
+
+
 
 
 

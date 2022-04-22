@@ -719,6 +719,13 @@ MonoBehaviour:
   _color_dropdown: {fileID: 0}
   _difficulty_dropdown: {fileID: 0}
   dropDownList: []
+  green: {r: 0, g: 0, b: 0, a: 0}
+  purple: {r: 0, g: 0, b: 0, a: 0}
+  pink: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  hardRed: {r: 0, g: 0, b: 0, a: 0}
+  medYellow: {r: 0, g: 0, b: 0, a: 0}
+  easyGreen: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &344207487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,6 +899,13 @@ MonoBehaviour:
   _color_dropdown: {fileID: 0}
   _difficulty_dropdown: {fileID: 0}
   dropDownList: []
+  green: {r: 0, g: 0, b: 0, a: 0}
+  purple: {r: 0, g: 0, b: 0, a: 0}
+  pink: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  hardRed: {r: 0, g: 0, b: 0, a: 0}
+  medYellow: {r: 0, g: 0, b: 0, a: 0}
+  easyGreen: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &422978553
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,6 +3740,7 @@ MonoBehaviour:
   deaths: 0
   score: 0
   difficulty: 
+  lvlTime: 0
 --- !u!1 &1942691138
 GameObject:
   m_ObjectHideFlags: 0
@@ -4055,6 +4070,7 @@ GameObject:
   - component: {fileID: 2013835696}
   - component: {fileID: 2013835695}
   - component: {fileID: 2013835694}
+  - component: {fileID: 2013835697}
   m_Layer: 5
   m_Name: tmp_difficulty_drop
   m_TagString: Untagged
@@ -4182,6 +4198,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013835692}
   m_CullTransparentMesh: 1
+--- !u!114 &2013835697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013835692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0f349a427344946b203f0eb5448bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _color_dropdown: {fileID: 0}
+  _difficulty_dropdown: {fileID: 0}
+  dropDownList: []
+  green: {r: 0, g: 0, b: 0, a: 0}
+  purple: {r: 0, g: 0, b: 0, a: 0}
+  pink: {r: 0, g: 0, b: 0, a: 0}
+  blue: {r: 0, g: 0, b: 0, a: 0}
+  hardRed: {r: 0, g: 0, b: 0, a: 0}
+  medYellow: {r: 0, g: 0, b: 0, a: 0}
+  easyGreen: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2020995867
 GameObject:
   m_ObjectHideFlags: 0
