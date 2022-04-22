@@ -9,6 +9,8 @@ public class DropDownColorPresetScript : MonoBehaviour
 
     [SerializeField] TMP_Dropdown _color_dropdown, _difficulty_dropdown;
     [SerializeField] TMP_Dropdown[] dropDownList;
+
+    [SerializeField] private Color green, purple, pink, blue, hardRed, medYellow, easyGreen;
     // Start is called before the first frame update
 
     private void Awake()
@@ -18,6 +20,13 @@ public class DropDownColorPresetScript : MonoBehaviour
     }
     void Start()
     {
+        blue = new Color32(160, 196, 255, 255);
+        green = new Color32(24, 133, 23, 255);
+        purple = new Color32(161, 83, 166, 255);
+        pink = new Color32(255, 173, 173, 255);
+        hardRed = new Color32(234, 0, 0, 255);
+        medYellow = new Color32(246, 226, 0, 255);
+        easyGreen = new Color32(45, 212, 25, 255);
 
         retrieveDropDownRef();
         foreach (TMP_Dropdown drop in dropDownList)
@@ -39,24 +48,53 @@ public class DropDownColorPresetScript : MonoBehaviour
         switch (_color_dropdown.value)
         {
             case 0:
-                _color_dropdown.targetGraphic.color = new Color32(24, 133, 23, 255);  // green
+                _color_dropdown.targetGraphic.color = green; // green
+                PlayerManager.Instance.setColorValue(green);
                 break;
             case 1:
 
-                _color_dropdown.targetGraphic.color = new Color32(161, 83, 166, 255); // purple
-                
+                _color_dropdown.targetGraphic.color = purple; // 
+                PlayerManager.Instance.setColorValue(purple);
+
                 break;
             case 2:
-                _color_dropdown.targetGraphic.color = new Color32(160, 196, 255, 255);  // blue
+                _color_dropdown.targetGraphic.color = blue;  // blue
+                PlayerManager.Instance.setColorValue(blue);
                 break;
             case 3:
-                _color_dropdown.targetGraphic.color = new Color32(255, 173, 173, 255); // pink
+                _color_dropdown.targetGraphic.color = pink; // pink
+                PlayerManager.Instance.setColorValue(pink);
 
                 break;
             default:
                 break;
         }
 
+    }
+
+
+    private void updateDifficultyColorsDropdown()
+    {
+
+        switch (_difficulty_dropdown.value)
+        {
+            case 0:
+                _difficulty_dropdown.targetGraphic.color = easyGreen; // green
+                
+                break;
+            case 1:
+
+                _difficulty_dropdown.targetGraphic.color = medYellow; // 
+                
+
+                break;
+            case 2:
+                _difficulty_dropdown.targetGraphic.color = hardRed;  // blue
+
+                break;
+            default:
+                break;
+        }
     }
         
 
@@ -70,6 +108,7 @@ public class DropDownColorPresetScript : MonoBehaviour
     void Update()
     {
         updateOptionColors();
+        updateDifficultyColorsDropdown();
     }
 
     private void referenceDropDowns(TMP_Dropdown d)

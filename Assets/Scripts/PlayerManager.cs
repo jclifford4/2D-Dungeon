@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     private static PlayerManager _instance;
     [SerializeField] private int score;
     [SerializeField] private string color, name;
+    [SerializeField] private Color colorValue;
 
     public static PlayerManager Instance
     {
@@ -62,9 +63,25 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    internal void setColor(string color)
+    public void setColorValue(Color colorValue)
+    {
+        this.colorValue = colorValue;
+    }
+
+    public Color getColorValue()
+    {
+        return colorValue;
+    }
+
+    public void setColor(string color)
     {
         this.color = color;
+
+    }
+
+    public string getColor()
+    {
+        return color;
     }
 }
 

@@ -69,6 +69,10 @@ public class CreateCharcterButtonLinker : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("SaveClick");
         PlayerManager.Instance.setColor(d_color.options[d_color.value].text);
+
+
+
+
     }
 
     

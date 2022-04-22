@@ -56,7 +56,7 @@ public class ClickHandler : MonoBehaviour
         else if (a.gameObject.name == "Credits_Button")
         {
             FindObjectOfType<AudioManager>().Play("ButtonClick");
-            UIManager.Instance.goToSceneX(5);
+            UIManager.Instance.goToSceneX(6);
         }
 
     }
