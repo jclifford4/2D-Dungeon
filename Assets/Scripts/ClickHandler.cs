@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ClickHandler : MonoBehaviour
 {
 
-    [SerializeField] private Button b_quit, b_play, b_about, b_create, b_back, b_credits;
+    [SerializeField] private Button b_quit, b_play, b_about, b_create, b_back, b_credits, b_volume;
     [SerializeField] private Button[] buttonList;
     // Start is called before the first frame update
     void Start()
@@ -57,6 +57,20 @@ public class ClickHandler : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("ButtonClick");
             UIManager.Instance.goToSceneX(6);
+        }
+        else if (a.gameObject.name == "Volume_Button_mus")
+        {
+            //FindObjectOfType<AudioManager>().Play("ButtonClick");
+            FindObjectOfType<AudioManager>().setVolume("Theme", VolumeSliderScript.getMusVolume());
+        }
+        else if (a.gameObject.name == "Volume_Button_sfx")
+        {
+            //FindObjectOfType<AudioManager>().Play("ButtonClick");
+            FindObjectOfType<AudioManager>().setVolume("PlayerSteps1", VolumeSliderScript.getSFXVolume());
+            FindObjectOfType<AudioManager>().setVolume("PlayerJump", VolumeSliderScript.getSFXVolume());
+            FindObjectOfType<AudioManager>().setVolume("ItemPickup", VolumeSliderScript.getSFXVolume());
+
+            FindObjectOfType<AudioManager>().Play("ItemPickup");
         }
 
     }

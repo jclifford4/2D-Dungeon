@@ -30,6 +30,9 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(this);
         if (_instance == null)
         {
+            setColorValue(Color.white);
+            setName("Johnny Jump");
+            setScore(0);
             _instance = this;
             Debug.Log("PlayerManger _instance: " + _instance);
         }

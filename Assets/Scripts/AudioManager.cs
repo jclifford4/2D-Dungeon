@@ -104,6 +104,13 @@ public class AudioManager : MonoBehaviour
             s.source.Stop();
         }
     }
+
+
+    public void setVolume(string name, float selectedVol)
+    {
+        SoundScript s = Array.Find(sounds, sound => sound.name == name);
+        s.source.volume = (selectedVol / 1000);
+    }
     
 
 }
