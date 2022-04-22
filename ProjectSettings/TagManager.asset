@@ -12,6 +12,8 @@ TagManager:
   - ColorDrop
   - Teleporter
   - LockedWall
+  - SpawnPoint
+  - KillBox
   layers:
   - Default
   - TransparentFX
