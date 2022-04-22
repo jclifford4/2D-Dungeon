@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
         if (_instance == null)
         {
+
+            setDifficulty("medium");
             _instance = this;
             Debug.Log("GameManager _instance: " + _instance);
         }
