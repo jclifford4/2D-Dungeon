@@ -36,6 +36,8 @@ public class Respawn : MonoBehaviour
     
 
 
+
+
     void respawn()
     {
         objPlayer.transform.position = spawn.transform.position;
