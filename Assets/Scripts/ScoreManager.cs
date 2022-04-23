@@ -7,7 +7,8 @@ using System;
 public class ScoreManager : MonoBehaviour
 {
     TMP_Text txt_pts;
-    [SerializeField] TMP_Text txt_time_value;
+    [SerializeField] private  TMP_Text txt_time_value, txt_time;
+    [SerializeField] private static TMP_Text sTxt_time, s_text_time_value;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,8 @@ public class ScoreManager : MonoBehaviour
     {
         txt_pts = GameObject.Find("txt_pts").GetComponent<TMP_Text>();
         txt_time_value = GameObject.Find("txt_time_value").GetComponent<TMP_Text>();
+
+        txt_time = GameObject.Find("txt_time").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -25,7 +28,8 @@ public class ScoreManager : MonoBehaviour
     {
         if (UIManager.Instance.getActiveSceneNum() > 2 && UIManager.Instance.getActiveSceneNum() < 6)
         {
-
+            s_text_time_value = txt_time_value;
+            sTxt_time = txt_time;
             txt_pts.text = PlayerManager.Instance.getScore().ToString();
             /*int time = (int)LevelTimer.getLvlTime();*/
             txt_time_value.text = Mathf.Round(LevelTimer.getLvlTime()).ToString();
@@ -33,12 +37,20 @@ public class ScoreManager : MonoBehaviour
         }
 
         
-
-
-
-
-
     }
 
-    
+
+    internal static TMP_Text getTimeTxt()
+    {
+        return sTxt_time;
+    }
+
+    internal static TMP_Text getTimeValue()
+    {
+        return s_text_time_value;
+    }
+
+
+
+
 }

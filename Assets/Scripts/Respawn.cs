@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,9 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
 
-    [SerializeField] GameObject spawnPoint, objPlayer;
+    [SerializeField] GameObject spawnPoint, objPlayer, fakeBlock;
     [SerializeField] Transform player, spawn;
+    [SerializeField] GameObject[] fakeBlocksList;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,16 @@ public class Respawn : MonoBehaviour
         objPlayer = GameObject.FindGameObjectWithTag("Player");
         player = objPlayer.transform;
 
+        
+        retrieveFakeBlockRefs();
+
+
+
+    }
+
+    private void retrieveFakeBlockRefs()
+    {
+        fakeBlocksList = GameObject.FindGameObjectsWithTag("PadLimited");
     }
 
     // Update is called once per frame
@@ -30,13 +42,17 @@ public class Respawn : MonoBehaviour
         if (other.gameObject.CompareTag("KillBox"))
         {
             respawn();
+            respawnBlocks();
         }
     }
 
-    
-
-
-
+    private void respawnBlocks()
+    {
+        foreach (GameObject block in fakeBlocksList)
+        {
+            block.SetActive(true);
+        }
+    }
 
     void respawn()
     {
