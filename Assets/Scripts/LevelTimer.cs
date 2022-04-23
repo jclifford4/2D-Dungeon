@@ -14,18 +14,25 @@ public class LevelTimer : MonoBehaviour
         
         if (GameManager.Instance.getDifficulty() == "Easy")
         {
-            targetTime = 180.0f;
-            startTime = targetTime;
+            targetTime = 240.0f;
+            
         }
         else if (GameManager.Instance.getDifficulty() == "Medium")
         {
-            targetTime = 120.0f;
-            startTime = targetTime;
-        }else
+            targetTime = 180.0f;
+            
+        }else if (GameManager.Instance.getDifficulty() == "Hard")
         {
-            targetTime = 60.0f;
-            startTime = targetTime;
+            targetTime = 90.0f;
+            
         }
+        else
+        {
+            targetTime = 240.0f;
+            
+        }
+
+        startTime = targetTime;
     }
 
     void Update()
