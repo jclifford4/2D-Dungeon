@@ -19,7 +19,8 @@ public class PlatformDisableScript : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other){
         if (other.gameObject.CompareTag("Player")){
-            Destroy(this.gameObject);
+            gameObject.active = false;
+            //Destroy(this.gameObject);
         }
     }
 }

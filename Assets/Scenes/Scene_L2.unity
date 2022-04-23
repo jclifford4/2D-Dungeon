@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702313d209d2364586033102d0f34b3, type: 3}
 --- !u!4 &127543430 stripped
@@ -1327,6 +1331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bouncePad_green (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
 --- !u!4 &269333040 stripped
@@ -1532,6 +1540,10 @@ PrefabInstance:
     - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
       propertyPath: m_Name
       value: Ground (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702313d209d2364586033102d0f34b3, type: 3}
@@ -1879,6 +1891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702313d209d2364586033102d0f34b3, type: 3}
 --- !u!4 &383791700 stripped
@@ -2203,6 +2219,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -2586,6 +2606,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -3255,6 +3279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bouncePad_green (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
 --- !u!4 &570631286 stripped
@@ -3320,6 +3348,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -3528,6 +3560,7 @@ GameObject:
   - component: {fileID: 607800004}
   - component: {fileID: 607800006}
   - component: {fileID: 607800007}
+  - component: {fileID: 607800008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3724,8 +3757,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   objPlayer: {fileID: 0}
+  fakeBlock: {fileID: 0}
   player: {fileID: 0}
   spawn: {fileID: 0}
+  fakeBlocksList: []
 --- !u!114 &607800007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3736,6 +3771,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b9e0d4c02e02664d8755cbb0ea4bc50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &607800008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607799997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9993efe5ace23642af7796698215450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &607853900
@@ -5533,6 +5580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702313d209d2364586033102d0f34b3, type: 3}
 --- !u!1 &979553911 stripped
@@ -6104,6 +6155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702313d209d2364586033102d0f34b3, type: 3}
 --- !u!4 &1101993855 stripped
@@ -6198,6 +6253,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -6982,6 +7041,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -9002,6 +9065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bouncePad_green
       objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
 --- !u!1001 &1739338736
@@ -9152,6 +9219,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -9992,6 +10063,10 @@ PrefabInstance:
     - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
       propertyPath: m_Name
       value: bouncePad_green (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 269727589721265915, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f8e2cc4f625ae419e85c8e74f4e31f, type: 3}
@@ -11237,6 +11312,10 @@ PrefabInstance:
     - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
       propertyPath: m_Name
       value: Ground (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714525320515585591, guid: 6702313d209d2364586033102d0f34b3, type: 3}
+      propertyPath: m_TagString
+      value: PadLimited
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6702313d209d2364586033102d0f34b3, type: 3}

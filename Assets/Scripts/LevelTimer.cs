@@ -5,22 +5,26 @@ using UnityEngine;
 
 public class LevelTimer : MonoBehaviour
 {
-    [SerializeField] private static float targetTime = 120.0f;
+    [SerializeField] private static float targetTime = 120.0f, startTime;
     [SerializeField] private float timescale = .5f;
+    private TMPro.TMP_Text txt_time;
 
     private void Start()
     {
         
-        if (GameManager.Instance.getDifficulty() == "easy")
+        if (GameManager.Instance.getDifficulty() == "Easy")
         {
             targetTime = 180.0f;
+            startTime = targetTime;
         }
-        else if (GameManager.Instance.getDifficulty() == "medium")
+        else if (GameManager.Instance.getDifficulty() == "Medium")
         {
             targetTime = 120.0f;
+            startTime = targetTime;
         }else
         {
             targetTime = 60.0f;
+            startTime = targetTime;
         }
     }
 
@@ -37,11 +41,22 @@ public class LevelTimer : MonoBehaviour
         }
             
 
-        if (targetTime <= 0.0f)
+
+        if (targetTime > 0 &&  targetTime <= startTime/3)
+        {
+            timerColorRed();
+        }
+        else if (targetTime <= 0.0f)
         {
             timerEnded();
         }
 
+    }
+
+    private void timerColorRed()
+    {
+        ScoreManager.getTimeTxt().color = Color.red;
+        ScoreManager.getTimeValue().color = Color.red;
     }
 
     void timerEnded()

@@ -20,7 +20,8 @@ public class FakeBlock : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            gameObject.active = false;
+            //Destroy(gameObject);
         }
     }
 }
