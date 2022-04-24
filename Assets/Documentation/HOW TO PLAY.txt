@@ -1,0 +1,7 @@
+Player must navigate the map utilizing jump and movement keys 
+to reach the portal at the end of the level.
+
+A - move left.
+D - move right.
+SPC - jump.
+L Shift - sprint.

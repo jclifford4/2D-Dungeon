@@ -248,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4720281860434985430, guid: 69290db78ef7fe74f97a98f411b1a291, type: 3}
       propertyPath: sounds.Array.data[5].volume
-      value: 0.06
+      value: 0.044
       objectReference: {fileID: 0}
     - target: {fileID: 4720281860434985430, guid: 69290db78ef7fe74f97a98f411b1a291, type: 3}
       propertyPath: sounds.Array.data[6].volume
