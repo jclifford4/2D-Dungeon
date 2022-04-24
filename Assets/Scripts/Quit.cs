@@ -11,15 +11,8 @@ public class Quit : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 
 #endif
-        /*if (UnityEditor.EditorApplication.isPlaying)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-            Debug.Log("Quitting!");
-        }*/
 
         Application.Quit();
-
-
 
     }
 

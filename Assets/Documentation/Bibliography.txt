@@ -1,0 +1,33 @@
+
+~~~SCRIPTS~~~
+
+AudioManager - Inspired by Brackeys
+SoundScript - Inspired by Brackeys
+
+**All other scripts Inspired from Unity Documentation and my own thought process.
+
+~~~AUDIO~~~
+
+PlayerFootSteps - Prototype Hero Demo - Pixel Art on Unity store
+PlayerJump - Prototype Hero Demo - Pixel Art on Unity store
+ThemeSong - https://mixkit.co/free-stock-music/tag/videogame/
+Menu Sounds and Clicks - https://mixkit.co/free-stock-music/tag/videogame/
+
+~~~SPRITES~~~
+
+Player - Prototype Hero Demo - Pixel Art on Unity store
+	(Sprite used animations made by me)
+
+Menu Backgrounds - Painted HQ 2D Forest Medieval Background - Unity Store
+
+Portal - https://www.pngaaa.com/detail/3113939
+
+
+~~~ANIMATION~~~
+
+PlayerSprite from - Prototype Hero Demo - Pixel Art on Unity store
+	(animations made by me)
+
+Torches - PlatformerSet1 - Unity Store
+Diamonds - PlatformerSet1 - Unity Store
+Chandelier - PlatformerSet1 - Unity Store

@@ -26,13 +26,6 @@ public class PlayerSounds : MonoBehaviour
         else if ((Input.GetKeyUp(KeyCode.A)) || (Input.GetKeyUp(KeyCode.D)) || (!PlayerMovement.isTouchingGround()))
         {
             FindObjectOfType<AudioManager>().Stop("PlayerSteps1");
-
-            /*if (Input.GetKeyDown(KeyCode.Space))
-            {
-                
-                FindObjectOfType<AudioManager>().Play("PlayerJump");
-                
-            }*/
            
         }
 

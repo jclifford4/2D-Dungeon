@@ -16,7 +16,7 @@ public class DropDownColorPresetScript : MonoBehaviour
     private void Awake()
     {
 
-        
+
     }
     void Start()
     {
@@ -33,7 +33,7 @@ public class DropDownColorPresetScript : MonoBehaviour
         {
             TMP_Dropdown d = drop;
             referenceDropDowns(d);
-            
+
         }
 
 
@@ -80,12 +80,12 @@ public class DropDownColorPresetScript : MonoBehaviour
         {
             case 0:
                 _difficulty_dropdown.targetGraphic.color = easyGreen; // green
-                
+
                 break;
             case 1:
 
                 _difficulty_dropdown.targetGraphic.color = medYellow; // 
-                
+
 
                 break;
             case 2:
@@ -96,7 +96,7 @@ public class DropDownColorPresetScript : MonoBehaviour
                 break;
         }
     }
-        
+
 
     private void retrieveDropDownRef()
     {
@@ -127,14 +127,14 @@ public class DropDownColorPresetScript : MonoBehaviour
             colors.Add(purple);
             colors.Add(blue);
             colors.Add(pink);
-            
+
             //d.image.color = Color.green;
             d.AddOptions(colors);
 
             //d.targetGraphic.color = Color.green;
-            
-            
-            
+
+
+
         }
         else if (d.name.Equals("tmp_difficulty_drop"))
         {
@@ -145,11 +145,11 @@ public class DropDownColorPresetScript : MonoBehaviour
             TMP_Dropdown.OptionData easy = new TMP_Dropdown.OptionData("Easy");
             TMP_Dropdown.OptionData medium = new TMP_Dropdown.OptionData("Medium");
             TMP_Dropdown.OptionData hard = new TMP_Dropdown.OptionData("Hard");
-            
+
             difficulty.Add(easy);
             difficulty.Add(medium);
             difficulty.Add(hard);
-            
+
 
             //d.image.color = Color.green;
             d.AddOptions(difficulty);
@@ -157,5 +157,5 @@ public class DropDownColorPresetScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+
 }
